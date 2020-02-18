@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Header from './components/Header'
+import Main from './components/Main'
+import Footer from './components/Footer'
 
-function App() {
+const App = () => {
+  const title = 'Getting Started React'
+  const subtitle = 'React is a JavaScript library'
+  const authorFirstName = 'Asabeneh'
+  const authorLastName = 'Yetayeh'
+  const date = 'Feb 17, 2020'
+  const techs = ['HTML', 'CSS', 'JavaScript']
+  const copyright = new Date().getFullYear()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header
+        title={title}
+        subtitle={subtitle}
+        authorFirstName={authorFirstName}
+        authorLastName={authorLastName}
+        date={date}
+      />
+      <Main techs={techs} />
+      <Footer copyright={copyright} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
