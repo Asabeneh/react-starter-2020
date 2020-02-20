@@ -1,13 +1,18 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-const Main = ({ techs }) => {
-  const techsList = techs.map(tech => <li key={'key-' + tech}>{tech}</li>)
-  return (
-    <main>
-      <p>Prerequisite to get started React</p>
-      <ul>{techsList}</ul>
-    </main>
-  )
+
+class Main extends Component {
+  render() {
+    const techsList = this.props.techs.map(tech => (
+      <li key={'key-' + tech}>{tech}</li>
+    ))
+    return (
+      <main>
+        <p>Prerequisite to get started React</p>
+        <ul>{techsList}</ul>
+      </main>
+    )
+  }
 }
 
 Main.propTypes = {
