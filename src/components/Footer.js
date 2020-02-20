@@ -1,9 +1,13 @@
 import React from 'react'
-const Footer = ({ copyright }) => (
+import PropTypes from 'prop-types'
+const Footer = props => (
   <footer>
-    <div className='footer-wrapper'>
-      <p>Copyright {copyright}</p>
-    </div>
+    <p>Copyright {props.copyRight}</p>
   </footer>
 )
+
+Footer.propTypes = {
+  copyRight: PropTypes.number.isRequired
+}
+
 export default Footer

@@ -1,16 +1,31 @@
 import React from 'react'
+import reactLogo from '../react-logo.png'
+import PropTypes from 'prop-types'
 
-const Header = ({ title, subtitle, authorFirstName, authorLastName, date }) => (
-  <header>
-    <div className='header-wrapper'>
+const headerStyles = {
+  background: 'black',
+  color: 'orange',
+  padding: 25
+}
+
+const Header = ({ title, subtitle, author, date }) => {
+  return (
+    <header style={headerStyles} className='header-wrapper'>
+      <img src={reactLogo} alt='react logo' />
       <h1>{title}</h1>
       <h2>{subtitle}</h2>
       <p>
-        Instructor: {authorFirstName} {authorLastName}
+        Instructor:{author.firstName} {author.lastName}
       </p>
-      <p>Date: {date} </p>
-    </div>
-  </header>
-)
+      <p>{date}</p>
+    </header>
+  )
+}
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  author: PropTypes.objectOf(PropTypes.string).isRequired
+}
 
 export default Header
+

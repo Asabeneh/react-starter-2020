@@ -1,21 +1,16 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 const Main = ({ techs }) => {
-  const techsFormatted = techs.map(tech => <li key={tech}>{tech}</li>)
+  const techsList = techs.map(tech => <li key={'key-' + tech}>{tech}</li>)
   return (
     <main>
-      <div className='main-wrapper'>
-        <p>
-          Prerequisite to get started{' '}
-          <strong>
-            <em>react.js</em>
-          </strong>
-          :
-        </p>
-        <ul>{techsFormatted}</ul>
-      </div>
+      <p>Prerequisite to get started React</p>
+      <ul>{techsList}</ul>
     </main>
   )
 }
 
+Main.propTypes = {
+  techs: PropTypes.arrayOf(PropTypes.string).isRequired
+}
 export default Main
