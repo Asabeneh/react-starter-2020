@@ -27,5 +27,9 @@ Header.propTypes = {
   author: PropTypes.objectOf(PropTypes.string).isRequired
 }
 
-export default Header
+Header.defaultProps = {
+  title: 'Any title can be a title',
+  subtitle: 'Any subtitle can a subtitle'
+}
 
+export default Header
